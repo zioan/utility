@@ -2,7 +2,7 @@ const input = document.querySelector(".input");
 const city = document.querySelector(".city");
 const Temp = document.querySelector(".temp");
 const discription = document.querySelector(".discription");
-const image = document.querySelector(".image");
+const image = document.querySelector(".weather-img");
 
 input.onsubmit = (e) => {
   e.preventDefault();
