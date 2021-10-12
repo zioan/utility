@@ -22,7 +22,7 @@ weatherUpdate = (city) => {
     if (xhr.status === 404) {
       alert("Place not found");
     } else if (xhr.status === 400) {
-      alert("Type a city name 2");
+      alert("Type a city name");
     } else {
       let data = JSON.parse(xhr.response);
       Temp.innerHTML = `${Math.round(data.main.temp - 273.15)}°C`;

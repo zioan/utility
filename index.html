@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Utility</title>
@@ -11,6 +11,11 @@
     <div class="container">
       <!-- weather -->
       <div class="weather">
+        <span
+          class="tooltip"
+          data-tooltip="OpenWeather API. Enter your current location to see updates."
+          >i</span
+        >
         <form class="input">
           <input class="city" type="text" placeholder="Enter City Name" />
           <input class="submit" type="submit" value="Get Updates" />
@@ -27,24 +32,33 @@
 
       <!-- Clock -->
       <div class="clock-container">
+        <sspan
+          class="tooltip"
+          data-tooltip="Simple JS alarm clock. Meant to save you from sedentary :)"
+          >i</sspan
+        >
         <div class="main-container">
           <span class="clock"></span>
-        </div>
-        <div class="alarm-container">
-          <h3>Set Alarm Time</h3>
-            <div>
-              <select class="alarm-hrs"></select>
+          <div class="alarm-container">
+            <div class="selectors">
+              <div>
+                <span>H</span>
+                <select class="alarm-hrs"></select>
+              </div>
+              <div>
+                <select class="alarm-mins"></select>
+                <span>M</span>
+              </div>
             </div>
-            <div>
-              <select class="alarm-mins"></select>
-            </div>
-        </div>
-        <div class="buttonHolder">
-          <button class="setButton">Set Alarm</button>
-          <button class="clearButton">Clear Alarm</button>
+          </div>
+          <h3>Set Alarm</h3>
+          <div class="buttonHolder">
+            <button class="setButton">Set Alarm</button>
+            <button class="clearButton">Clear Alarm</button>
+          </div>
         </div>
       </div>
-
+    </div>
     <script type="module" src="./js/app.js"></script>
     <script src="./js/weather.js"></script>
     <script src="./js/clock.js"></script>
