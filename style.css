@@ -1,9 +1,9 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  margin: 0;
-  padding: 0;
   line-height: 1.6;
 }
 
@@ -35,8 +35,7 @@ body {
 
 .tooltip {
   position: relative;
-  color: yellow;
-  /* border: 1px solid #333; */
+  color: rgb(73, 73, 73);
   font-size: 1.2rem;
   border-radius: 50%;
   font-weight: bolder;
@@ -53,31 +52,28 @@ body {
   border-width: 10px;
   position: absolute;
   top: 22px;
-  left: -8px;
+  left: 0;
 }
 
 .tooltip:hover::after {
   content: attr(data-tooltip);
   position: absolute;
-  width: 290px;
-  margin: 0;
-  background: rgb(128, 128, 128);
+  width: 250px;
+  background: rgba(128, 128, 128, 0.93);
   color: #fff;
   padding: 15px;
   border-radius: 5px;
-  left: -10px;
+  left: -6px;
   top: 40px;
   z-index: 1;
   font-size: 0.7em;
 }
 
-/* WEATHER */
-.weather,
-.clock-container {
+/* util */
+
+.outside-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 340px;
   height: 320px;
   border-radius: 10px;
@@ -86,49 +82,50 @@ body {
   border-radius: 15px;
 }
 
-form {
+.main-container {
+  width: 100%;
+  height: 100%;
+  background: rgba(156, 156, 156, 0.658);
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 2px #5e5d5da9;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.btn {
+  font-size: 1em;
+  border: none;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
+/* WEATHER */
+.input {
   padding: 5px;
-  width: fit-content;
   border-radius: 10px;
 }
 
 .city {
-  width: 175px;
-  font-size: 1em;
-  border: none;
-  padding: 10px;
+  width: 120px;
   border-radius: 10px 0 0 10px;
-  outline: none;
+  cursor: auto;
 }
 
 .submit {
-  font-size: 1em;
-  border: none;
-  padding: 10px;
   border-radius: 0 10px 10px 0;
-  cursor: pointer;
 }
 
-.weatherContainer {
-  position: relative;
-  background: rgba(156, 156, 156, 0.658);
-  padding: 20px;
-  height: 100%;
-  border-radius: 15px;
-  box-shadow: 0 0 20px 2px #5e5d5da9;
-}
-
-.image {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  height: 100px;
-  border-radius: 50%;
-  border: 0.2px solid black;
+.weather-img {
+  height: 5rem;
 }
 
 .temp {
-  font-size: 4em;
+  font-size: 3em;
 }
 
 .description {
@@ -144,27 +141,11 @@ form {
 /* Clock */
 
 .clock {
-  font-size: 4rem;
-  margin: 0;
-  padding: 0;
+  font-size: 3rem;
 }
 
 .clock-container h3 {
   text-align: center;
-  /* color: #fff; */
-  margin-top: 0.5rem;
-}
-
-.main-container {
-  width: 288px;
-  background: rgba(156, 156, 156, 0.658);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px 2px #5e5d5da9;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .selectors {
@@ -173,19 +154,15 @@ form {
 }
 
 .selectors select {
-  /* border: none; */
   background: transparent;
   padding: 5px;
   outline: none;
   cursor: pointer;
+  margin: 1rem 0 1.2rem;
 }
 
-.buttonHolder button {
-  padding: 10px;
-  margin-top: 10px;
-  cursor: pointer;
-  outline: none;
-  border: none;
+.buttonHolder {
+  margin-top: 1rem;
 }
 
 .setButton {
@@ -194,4 +171,16 @@ form {
 
 .clearButton {
   border-radius: 0 10px 10px 0;
+}
+
+/* QUICK NOTES */
+.notes {
+  resize: none;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.notes-container {
+  display: block;
 }
