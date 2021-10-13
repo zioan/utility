@@ -158,7 +158,8 @@ body {
   padding: 5px;
   outline: none;
   cursor: pointer;
-  margin: 1rem 0 1.2rem;
+  margin: 1rem 0.2rem 1.2rem;
+  border: 1px solid rgb(87, 87, 87);
 }
 
 .buttonHolder {

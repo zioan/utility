@@ -3,11 +3,13 @@ const alarmHrs = document.querySelector(".alarm-hrs");
 const alarmMins = document.querySelector(".alarm-mins");
 const setButton = document.querySelector(".setButton");
 const clearButton = document.querySelector(".clearButton");
+const notification = document.querySelector(".notification");
 
 setButton.addEventListener("click", alarmSet);
 clearButton.addEventListener("click", alarmClear);
 
 let sound = new Audio("../bell.mp3");
+let isActive = false;
 
 const currentTime = setInterval(function () {
   const date = new Date();
@@ -59,14 +61,15 @@ function alarmSet() {
 
   alarmHrs.disabled = true;
   alarmMins.disabled = true;
+  notification.innerHTML = "Alarm active!";
 
-  //when alarmtime is equal to currenttime then play a sound
   setInterval(function () {
+    isActive = true;
     const date = new Date();
     const seconds = date.getSeconds();
     const currentTime = `${clock.textContent}:${seconds}`;
 
-    if (alarmTime == currentTime) {
+    if (alarmTime == currentTime && isActive) {
       sound.play();
       setTimeout(function () {
         alarmClear();
@@ -80,4 +83,6 @@ function alarmClear() {
   alarmMins.disabled = false;
   console.log("alarm clear");
   sound.pause();
+  isActive = false;
+  notification.innerHTML = "Alarm off";
 }

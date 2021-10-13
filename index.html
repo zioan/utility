@@ -20,7 +20,7 @@
         <div class="main-container">
           <span
             class="tooltip"
-            data-tooltip="OpenWeather API. Enter your current location to see updates."
+            data-tooltip='OpenWeather API. Enter your current location to see updates. City name will be saved and retrieved from local storage. By default is set to "Oldenburg". Submitting a wrong city name will also trigger the default value.'
             ><i class="fas fa-info-circle"></i
           ></span>
           <h3 class="temp"></h3>
@@ -28,7 +28,7 @@
             class="weather-img"
             src="https://openweathermap.org/img/wn/02n@2x.png"
           />
-          <marquee class="discription"></marquee>
+          <marquee class="description"></marquee>
           <form class="input">
             <input class="city btn" type="text" placeholder="Enter City" />
             <input class="submit btn" type="submit" value="Get Updates" />
@@ -55,7 +55,7 @@
               <span>M</span>
             </div>
           </div>
-          <h3>Next break :)</h3>
+          <h3 class="notification">Alarm off</h3>
           <div class="buttonHolder">
             <button class="setButton btn">Set Alarm</button>
             <button class="clearButton btn">Clear Alarm</button>

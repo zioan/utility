@@ -1,7 +1,7 @@
 const input = document.querySelector(".input");
 const city = document.querySelector(".city");
 const Temp = document.querySelector(".temp");
-const discription = document.querySelector(".discription");
+const description = document.querySelector(".description");
 const image = document.querySelector(".weather-img");
 
 let cityName = localStorage.getItem("cityName");
@@ -10,8 +10,8 @@ input.onsubmit = (e) => {
   e.preventDefault();
   localStorage.setItem("cityName", city.value);
   cityName = localStorage.getItem("cityName");
-  console.log(cityName);
   weatherUpdate(cityName);
+  city.value = "";
 };
 
 weatherUpdate = (cityName) => {
@@ -31,7 +31,7 @@ weatherUpdate = (cityName) => {
     } else {
       let data = JSON.parse(xhr.response);
       Temp.innerHTML = `${Math.round(data.main.temp - 273.15)}°C`;
-      discription.innerHTML = `${data.name} - ${data.weather[0].main}`;
+      description.innerHTML = `${data.name} - ${data.weather[0].main}`;
       image.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     }
   };
