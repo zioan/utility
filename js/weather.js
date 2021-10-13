@@ -4,23 +4,28 @@ const Temp = document.querySelector(".temp");
 const discription = document.querySelector(".discription");
 const image = document.querySelector(".weather-img");
 
+let cityName = localStorage.getItem("cityName");
+
 input.onsubmit = (e) => {
   e.preventDefault();
-  weatherUpdate(city.value);
-  city.value = "";
+  localStorage.setItem("cityName", city.value);
+  cityName = localStorage.getItem("cityName");
+  console.log(cityName);
+  weatherUpdate(cityName);
 };
 
-weatherUpdate = (city) => {
+weatherUpdate = (cityName) => {
   const xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=77015739912443f487dfa66463e8ac46`
+    `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=77015739912443f487dfa66463e8ac46`
   );
 
   xhr.send();
   xhr.onload = () => {
     if (xhr.status === 404) {
-      alert("Place not found");
+      alert("Invalid city name");
+      localStorage.setItem("cityName", "oldenburg");
     } else if (xhr.status === 400) {
       alert("Type a city name");
     } else {
@@ -32,4 +37,10 @@ weatherUpdate = (city) => {
   };
 };
 
-weatherUpdate("oldenburg");
+if (localStorage.getItem("cityName") === null) {
+  localStorage.setItem("cityName", "oldenburg");
+  cityName = localStorage.getItem("cityName");
+  weatherUpdate(cityName);
+}
+
+weatherUpdate(cityName);
