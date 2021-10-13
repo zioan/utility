@@ -58,7 +58,7 @@ body {
 .tooltip:hover::after {
   content: attr(data-tooltip);
   position: absolute;
-  width: 250px;
+  width: 262px;
   background: rgba(128, 128, 128, 0.93);
   color: #fff;
   padding: 15px;
@@ -142,10 +142,6 @@ body {
 
 .clock {
   font-size: 3rem;
-}
-
-.clock-container h3 {
-  text-align: center;
 }
 
 .selectors {

@@ -71,6 +71,7 @@ function alarmSet() {
 
     if (alarmTime == currentTime && isActive) {
       sound.play();
+      alert("It's time for a break :)");
       setTimeout(function () {
         alarmClear();
       }, 2000);
