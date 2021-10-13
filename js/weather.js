@@ -4,17 +4,6 @@ const Temp = document.querySelector(".temp");
 const description = document.querySelector(".description");
 const image = document.querySelector(".weather-img");
 
-if (localStorage.getItem("cityName") === null) {
-  cityName = localStorage.getItem("cityName");
-  localStorage.setItem("cityName", "oldenburg");
-}
-
-localStorage.setItem("cityName", "oldenburg");
-
-// if (localStorage.getItem(!"cityName")) {
-//   localStorage.setItem("cityName", "oldenburg");
-// }
-
 let cityName = localStorage.getItem("cityName");
 
 input.onsubmit = (e) => {
