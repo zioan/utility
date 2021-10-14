@@ -181,3 +181,9 @@ body {
 .notes-container {
   display: block;
 }
+
+/* Bookmarks */
+.bookmarks {
+  width: 100%;
+  height: auto;
+}
