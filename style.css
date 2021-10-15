@@ -208,3 +208,25 @@ body {
   outline: none;
   border: none;
 }
+
+.bookmark-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.bookmark-item:nth-child(even) {
+  background: #fff;
+}
+
+.title-target {
+  width: 500px;
+  height: 20px;
+  color: blue;
+  background: red;
+}
+
+/* .detele-item {
+  align-self: flex-end;
+} */

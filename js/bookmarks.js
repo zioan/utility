@@ -28,11 +28,15 @@ function getBookmarks() {
     const ul = document.createElement("ul");
     const liTitle = document.createElement("li");
     const liLink = document.createElement("li");
+    const liUrl = document.createElement("a");
     const removeItem = document.createElement("a");
 
     liTitle.appendChild(document.createTextNode(bookmark[0]));
-    liLink.appendChild(document.createTextNode(bookmark[1]));
-    liLink.classList.add("link-targer");
+    liUrl.innerHTML = bookmark[1];
+    liUrl.href = bookmark[1];
+    liUrl.setAttribute("target", "_blank");
+    liLink.appendChild(liUrl);
+    liUrl.classList.add("link-targer");
 
     removeItem.className = "detele-item";
     removeItem.innerHTML = '<i class="far fa-trash-alt"></i>';
@@ -57,12 +61,28 @@ function addBookmark(e) {
   const ul = document.createElement("ul");
   const liTitle = document.createElement("li");
   const liLink = document.createElement("li");
+  const liUrl = document.createElement("a");
   const removeItem = document.createElement("a");
 
+  const inputLink = urlLink.value.toLowerCase();
+  const linkPrexix = "https://www.";
+  let outputLink = "";
+
+  if (inputLink.startsWith("www.")) {
+    outputLink = linkPrexix.concat(inputLink.slice(4));
+  } else if (inputLink.startsWith("https://www.")) {
+    outputLink = inputLink;
+  } else {
+    outputLink = linkPrexix.concat(inputLink);
+  }
+
   liTitle.appendChild(document.createTextNode(urlTitle.value));
-  liTitle.classList.add("title-targer");
-  liLink.appendChild(document.createTextNode(urlLink.value));
-  liLink.classList.add("link-targer");
+  liUrl.innerHTML = outputLink;
+  liUrl.href = outputLink;
+  liUrl.setAttribute("target", "_blank");
+  liLink.appendChild(liUrl);
+  liUrl.classList.add("link-targer");
+
   removeItem.className = "detele-item";
   removeItem.innerHTML = '<i class="far fa-trash-alt"></i>';
   removeItem.addEventListener("click", removeBookmark);
@@ -72,7 +92,7 @@ function addBookmark(e) {
   ul.classList.add("bookmark-item");
   output.appendChild(ul);
 
-  storeBookmark(urlTitle.value, urlLink.value);
+  storeBookmark(urlTitle.value, outputLink);
 
   urlTitle.value = "";
   urlLink.value = "";
@@ -103,6 +123,8 @@ function removeBookmark(e) {
   const target = document.querySelector(".link-targer");
 
   bookmarks.forEach(function (bookmark, index) {
+    console.log(bookmark[1]);
+    console.log(target.innerHTML);
     if (bookmark[1] === target.innerHTML) {
       if (confirm(`Confirm to remove - ${bookmark[0]}`)) {
         e.target.parentElement.parentElement.remove();
