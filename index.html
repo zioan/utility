@@ -32,7 +32,7 @@
           <marquee class="description"></marquee>
           <form class="input">
             <input class="city btn" type="text" placeholder="Enter City" />
-            <input class="submit btn" type="submit" value="Get Updates" />
+            <input class="submit input-box" type="submit" value="Get Updates" />
           </form>
         </div>
       </div>
@@ -97,27 +97,27 @@
           <div class="bookmarks-container">
             <form class="bookmarks-form">
               <input
-                class="url-title"
+                class="url-title input-box borderLeft"
                 type="text"
-                placeholder="Give your link a title"
+                placeholder="Bookmark title"
               />
               <input
-                class="url-link"
+                class="url-link input-box"
                 type="text"
-                placeholder="Paste your link URL"
+                placeholder="Bookmark URL"
               />
-              <input class="url-submit" type="submit" value="Submit URL" />
+              <input
+                class="url-submit btn borderRight"
+                type="submit"
+                value="Add bookmark"
+              />
             </form>
             <input
-              class="url-search"
+              class="filter input-box"
               type="text"
-              name="filter"
-              id="filter"
-              placeholder="Search by title"
+              placeholder="Search for bookmark (title or url)"
             />
-            <div class="bookmarks-output">
-              <ul class="collection"></ul>
-            </div>
+            <div class="bookmarks-output"></div>
           </div>
         </div>
       </div>

@@ -15,7 +15,6 @@ input.onsubmit = (e) => {
 };
 
 weatherUpdate = (cityName) => {
-  console.log(cityName);
   const xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
@@ -26,9 +25,9 @@ weatherUpdate = (cityName) => {
   xhr.onload = () => {
     if (xhr.status === 404) {
       alert("Invalid city name");
-      localStorage.setItem("cityName", "oldenburg");
     } else if (xhr.status === 400) {
       alert("Type a city name");
+      localStorage.setItem("cityName", "oldenburg");
     } else {
       let data = JSON.parse(xhr.response);
       Temp.innerHTML = `${Math.round(data.main.temp - 273.15)}°C`;
