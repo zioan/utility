@@ -249,18 +249,25 @@ a.detele-item {
 }
 
 @media screen and (max-width: 670px) {
+  .outside-container {
+    width: 340px;
+  }
+
   .bookmarks-form {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
+
   .bookmarks-form input {
     max-width: 100%;
     border-radius: 10px;
   }
+
   .bookmark-title {
     max-width: 100px;
   }
+
   .bookmark-link {
     max-width: 100px;
   }

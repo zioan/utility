@@ -18,6 +18,10 @@ loadEvents();
 const defaultBookmarks = [
   ["google", "https://www.google.com"],
   ["stackoverflow", "https://www.stackoverflow.com"],
+  [
+    "branch name in git",
+    "https://www.stackoverflow.com/questions/6245570/how-to-get-the-current-branch-name-in-git",
+  ],
   ["caniuse", "https://www.caniuse.com"],
 ];
 
