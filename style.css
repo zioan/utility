@@ -20,7 +20,8 @@ body {
 
 .container {
   max-width: 1100px;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -29,6 +30,7 @@ body {
   gap: 1rem;
   padding: 1rem;
   border-left: #333 solid 1px;
+  border-right: #333 solid 1px;
 }
 
 /* TOOLTIP */
@@ -102,6 +104,10 @@ body {
   outline: none;
   cursor: pointer;
   border: none;
+}
+
+.mb {
+  margin-bottom: 1rem;
 }
 
 /* WEATHER */
@@ -192,12 +198,14 @@ body {
 
 .detele-item {
   cursor: pointer;
-  color: red;
+}
+
+.border-radius {
+  border-radius: 10px;
 }
 
 .filter {
-  border-radius: 10px;
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
   width: 100%;
 }
 
@@ -211,22 +219,49 @@ body {
 
 .bookmark-item {
   display: flex;
-  justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  padding: 0.3rem;
+  border-bottom: 1px solid #333;
 }
 
-.bookmark-item:nth-child(even) {
-  background: #fff;
+.bookmarks-container a {
+  color: #333;
 }
 
-.title-target {
-  width: 500px;
-  height: 20px;
-  color: blue;
-  background: red;
+.bookmark-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 150px;
 }
 
-/* .detele-item {
-  align-self: flex-end;
-} */
+.bookmark-link {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+
+a.detele-item {
+  margin-left: auto;
+  order: 2;
+}
+
+@media screen and (max-width: 670px) {
+  .bookmarks-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .bookmarks-form input {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  .bookmark-title {
+    max-width: 100px;
+  }
+  .bookmark-link {
+    max-width: 100px;
+  }
+}

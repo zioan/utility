@@ -90,35 +90,41 @@
         <div class="main-container">
           <span
             class="tooltip"
-            data-tooltip="Save your favourite websites to local storage."
+            data-tooltip="Save your favorite websites to local storage. For demonstration purposes, a Demo load function was added. Links are automatically formatted."
             ><i class="fas fa-info-circle"></i
           ></span>
           <h3>Bookmarsk</h3>
           <div class="bookmarks-container">
             <form class="bookmarks-form">
               <input
-                class="url-title input-box borderLeft"
+                class="url-title input-box borderLeft mb"
                 type="text"
                 placeholder="Bookmark title"
               />
               <input
-                class="url-link input-box"
+                class="url-link input-box mb"
                 type="text"
                 placeholder="Bookmark URL"
               />
               <input
-                class="url-submit btn borderRight"
+                class="url-submit btn borderRight mb"
                 type="submit"
                 value="Add bookmark"
               />
             </form>
             <input
-              class="filter input-box"
+              class="filter input-box border-radius mb"
               type="text"
               placeholder="Search for bookmark (title or url)"
             />
-            <div class="bookmarks-output"></div>
+            <div class="bookmarks-output mb"></div>
           </div>
+          <button class="load-demo btn border-radius mb">
+            Load Demo Bookmarks
+          </button>
+          <button class="remove-all btn border-radius mb">
+            Remove All Bookmarks
+          </button>
         </div>
       </div>
     </div>
