@@ -16,6 +16,7 @@ function loadEvents() {
 loadEvents();
 
 const defaultBookmarks = [
+  ["Ioan Zaharia", "https://www.ioanzaharia.com/"],
   ["google", "https://www.google.com"],
   ["stackoverflow", "https://www.stackoverflow.com"],
   [

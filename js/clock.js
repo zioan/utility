@@ -16,9 +16,6 @@ const currentTime = setInterval(function () {
   const hours = date.getHours();
   const minutes = date.getMinutes();
 
-  alarmHrs.value = hours;
-  alarmMins.value = minutes + 1;
-
   clock.textContent = `${addZero(hours)}:${addZero(minutes)}`;
 }, 1000);
 
@@ -57,8 +54,6 @@ function alarmSet() {
     selectedMin
   )}:${defaultSeconds}`;
 
-  console.log(alarmTime);
-
   alarmHrs.disabled = true;
   alarmMins.disabled = true;
   notification.innerHTML = "Alarm active!";
@@ -82,7 +77,6 @@ function alarmSet() {
 function alarmClear() {
   alarmHrs.disabled = false;
   alarmMins.disabled = false;
-  console.log("alarm clear");
   sound.pause();
   isActive = false;
   notification.innerHTML = "Alarm off";

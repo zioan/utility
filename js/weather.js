@@ -25,6 +25,7 @@ weatherUpdate = (cityName) => {
   xhr.onload = () => {
     if (xhr.status === 404) {
       alert("Invalid city name");
+      localStorage.setItem("cityName", "oldenburg");
     } else if (xhr.status === 400) {
       alert("Type a city name");
       localStorage.setItem("cityName", "oldenburg");
